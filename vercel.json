@@ -1,9 +1,19 @@
 {
     "version": 2,
+    "builds": [
+    {
+      "src": "src/index.ts",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": "src/**/*.ts",
+        "outputDirectory": "service"
+      }
+    }
+  ],
     "rewrites": [
         {
-            "source": "/public/index.ts",
-            "destination": "./public/index.ts"
+            "source":  "/(.*)",
+            "destination": ".src/index.ts"
         }
     ]
 }

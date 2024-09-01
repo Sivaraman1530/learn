@@ -6,14 +6,14 @@
       "use": "@vercel/node",
       "config": {
         "includeFiles": "src/**/*.ts",
-        "outputDirectory": "service"
+        "outputDirectory": "dist"
       }
     }
   ],
     "rewrites": [
         {
             "source":  "/(.*)",
-            "destination": ".src/index.ts"
+            "destination": "/dist/index.ts"
         }
     ]
 }

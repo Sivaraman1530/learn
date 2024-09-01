@@ -1,19 +1,10 @@
-import App from './config/app'
-import express from 'express'
-import routes from './routes'
+import express from 'express';
+import { VercelRequest, VercelResponse } from '@vercel/node';
 
-const app = new App({
-  port: 8080,
-  middleWares: [
-    express.urlencoded({
-      limit: "20mb",
-      extended: false
-    }),
-    express.json({ limit: '50mb' }),
-  ],
-  routes: routes
-})
+const app = express();
 
+app.get('/', (req: express.Request, res: express.Response) => {
+  res.send('Hello from Vercel!');
+});
 
-
-app.listen();
+export default (req: VercelRequest, res: VercelResponse) => app(req, res);

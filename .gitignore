@@ -6,3 +6,4 @@ package-lock.json
 .build
 .vscode/settings.json
 
+.vercel
